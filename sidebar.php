@@ -56,7 +56,7 @@ if ($_GET["id"] <> "") {
     <?php } ?>
 
     <section>
-        <h2>Don't Follow me on Google Plus</h2>
+        <h2>Blaaaaaah</h2>
         <div>
             <div class="row">
                 <div class="12u">
