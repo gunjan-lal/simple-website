@@ -1,3 +1,15 @@
+role :app, %w{deployer@13.58.121.75}
+server '13.58.121.75', user: 'ubuntu', roles: %w{app}
+set :ssh_options, {
+    forward_agent: true,
+    auth_methods: %w(publickey),
+    keys: %w(/home/gunjan/Downloads/gunjan-key-ohio.pem)
+#    password: 'deployer',
+#    user: 'deployer',
+#    group: 'deployer',
+}
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

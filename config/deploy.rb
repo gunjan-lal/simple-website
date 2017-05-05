@@ -1,6 +1,23 @@
 # config valid only for current version of Capistrano
 lock "3.8.1"
 
+set :application, 'simple-website'
+#set :scm, 'git'
+set :repo_url, 'git@github.com:gunjan-lal/simple-website.git'
+
+set :deploy_to, "/var/www/html"
+
+set :pty, 'true'
+set :format, 'pretty'
+
+namespace :deploy do
+   desc 'Reload application'
+   task :reload do
+     on roles(:app), in: :sequence, wait: 5 do
+       sudo "service nginx reload"
+     end
+   end
+ end
 
 #set :myname, "gunjan"
 #task :hello do
@@ -8,11 +25,11 @@ lock "3.8.1"
 #end
 #after :hello, :copy
  
-task :mkdir do
-  on roles :all do
-      execute :mkdir, "/home/gunjan/folder"
-end
-end
+#task :mkdir do
+#  on roles :all do
+#      execute :mkdir, "/home/gunjan/folder"
+#end
+#end
 
 
 #after :hello, :goodbye
@@ -37,7 +54,7 @@ end
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+## set :pty, true
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"

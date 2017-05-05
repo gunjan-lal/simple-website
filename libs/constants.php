@@ -16,9 +16,9 @@ define('SITE_DIR', '/simple-website/');
 define('DB_PREFIX', 'mp_');
 
 define('DB_DRIVER', 'mysql');
-define('DB_HOST', 'localhost');
-define('DB_HOST_USERNAME', 'root');
-define('DB_HOST_PASSWORD', 'root');
+define('DB_HOST', '13.0.1.218:3306');
+define('DB_HOST_USERNAME', 'test');
+define('DB_HOST_PASSWORD', 'test');
 define('DB_DATABASE', 'simple-website');
 
 define('SITE_NAME', 'Simple Website');
