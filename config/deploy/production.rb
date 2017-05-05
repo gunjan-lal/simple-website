@@ -1,4 +1,4 @@
-role :app, %w{deployer@13.58.121.75}
+role :app, %w{ubuntu@13.58.121.75}
 server '13.58.121.75', user: 'ubuntu', roles: %w{app}
 set :ssh_options, {
     forward_agent: true,
